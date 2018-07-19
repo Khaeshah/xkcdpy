@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<title>xkcd python flask</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+<div style="width:400px;margin:0 auto;">
+  <div id="title">
+    {% if title %}
+    <h1> {{ title }} </h1>
+    {% else %}
+    <h1>Title Empty</h1>
+    {% endif %}
+  </div>
+
+  <div id="imageUrl">
+    {% if imageUrl %}
+    <img src= {{ imageUrl }}>
+    {% else %}
+    <h1>ImageUrl Empty</h1>
+    {% endif %}
+  </div>
+
+  <div id="sourceUrl">
+    {% if sourceUrl %}
+    <a href="{{ sourceUrl }}">Source</a>
+    {% else %}
+    <h1>Source not found</h1>
+    {% endif %}
+  </div>
+
+  <div class="w3-container">
+    {% if comicId %}
+    <a href="{{ comicId -1 }}" class="w3-button w3-black">Prev</a>
+    <a href="random" class="w3-button w3-black">Random</a>
+    <a href="{{ comicId +1}}" class="w3-button w3-black">Next</a>
+    {% else %}
+    <h1>Comic ID not found</h1>
+    {% endif %}
+
+  </div>
+</div>
+</body>
+</html>
